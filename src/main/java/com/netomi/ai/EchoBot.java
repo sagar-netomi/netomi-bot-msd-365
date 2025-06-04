@@ -8,7 +8,10 @@ import com.microsoft.bot.builder.ActivityHandler;
 import com.microsoft.bot.builder.MessageFactory;
 import com.microsoft.bot.builder.TurnContext;
 import com.microsoft.bot.schema.ChannelAccount;
+import com.netomi.ai.response.TextResponse;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -24,10 +27,20 @@ import java.util.concurrent.CompletableFuture;
  */
 public class EchoBot extends ActivityHandler {
 
+    @Autowired
+    public TextResponse textResponse;
+
     @Override
     protected CompletableFuture<Void> onMessageActivity(TurnContext turnContext) {
+
+        String conversationId=turnContext.getActivity().getConversation().getId();
+        String messageId=turnContext.getActivity().getId();
+
+        String inputText=turnContext.getActivity().getText();
+        String finalResponse=textResponse.prepareTextResponse(inputText,conversationId,messageId);
+
         return turnContext.sendActivity(
-            MessageFactory.text("Echo: " + turnContext.getActivity().getText())
+            MessageFactory.text("Echo: " + finalResponse)
         ).thenApply(sendResult -> null);
     }
 
