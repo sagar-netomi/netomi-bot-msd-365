@@ -32,7 +32,7 @@ This sample is a Spring Boot app and uses the Azure CLI and azure-webapp Maven p
 As described on [Deploy your bot](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-deploy-az-cli), you will perform the first 4 steps to setup the Azure app, then deploy the code using the azure-webapp Maven plugin.
 
 ### 1. Login to Azure
-From a command (or PowerShell) prompt in the root of the bot folder, execute:  
+From a command (or PowerShell) prompt in the root of the bot folder, execute:
 `az login`
 
 ### 2. Set the subscription
@@ -45,7 +45,7 @@ If you aren't sure which subscription to use for deploying the bot, you can view
 
 Replace `<botname>` and `<appsecret>` with your own values.
 
-`<botname>` is the unique name of your bot.  
+`<botname>` is the unique name of your bot.
 `<appsecret>` is a minimum 16 character password for your bot.
 
 Record the `appid` from the returned JSON
@@ -83,3 +83,7 @@ After the bot is deployed, you only need to execute #6 if you make changes to th
 - [Activity processing](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-activity-processing?view=azure-bot-service-4.0)
 - [Azure Bot Service Introduction](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0)
 - [Azure Bot Service Documentation](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
+
+
+git remote add azure https://\$netomi-ai:49MHtieo1dHMe5MSraHDLDbNsv8xz8jyhAQcB6guYDRqe0c1eEYYieflse5m@netomi-ai-fadxbwg9dzcgcqaz.scm.eastus-01.azurewebsites.net:443/netomi-ai.git
+git push azure
