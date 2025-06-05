@@ -34,6 +34,12 @@ import org.springframework.context.annotation.Import;
 public class Application extends BotDependencyConfiguration {
 
     public static void main(String[] args) {
+        // Print environment values before starting the application
+        System.out.println("Environment Values:");
+        System.out.println("MicrosoftAppId: " + System.getenv("MicrosoftAppId"));
+        System.out.println("MicrosoftAppPassword: " + System.getenv("MicrosoftAppPassword"));
+        System.out.println("MicrosoftAppTenantId: " + System.getenv("MicrosoftAppTenantId"));
+
         SpringApplication.run(Application.class, args);
     }
 
