@@ -37,10 +37,14 @@ public class Application extends BotDependencyConfiguration {
         // Print environment values before starting the application
         System.out.println("Environment Values:");
         System.out.println("MicrosoftAppId: " + System.getenv("MicrosoftAppId"));
-        System.out.println("MicrosoftAppPassword: " + System.getenv("MicrosoftAppPassword"));
+        System.out.println("MicrosoftAppPassword: " + (System.getenv("MicrosoftAppPassword") != null ? "[PRESENT]" : "[MISSING]"));
         System.out.println("MicrosoftAppTenantId: " + System.getenv("MicrosoftAppTenantId"));
+        System.out.println("MicrosoftAppType: " + System.getenv("MicrosoftAppType"));
+        System.out.println("AuthorityHostUrl: " + System.getenv("AuthorityHostUrl"));
 
         SpringApplication.run(Application.class, args);
+
+        System.out.println("Application started successfully!");
     }
 
     /**
