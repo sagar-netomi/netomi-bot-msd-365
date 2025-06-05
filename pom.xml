@@ -106,8 +106,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
             <configuration>
-              <source>1.8</source>
-              <target>1.8</target>
+              <source>11</source>
+              <target>11</target>
             </configuration>
           </plugin>
           <plugin>
@@ -136,9 +136,10 @@
             <artifactId>azure-webapp-maven-plugin</artifactId>
             <version>2.14.1</version>
             <configuration>
-              <schemaVersion>V2</schemaVersion>
+              <!-- <schemaVersion>V2</schemaVersion> -->
               <resourceGroup>${groupname}</resourceGroup>
               <appName>${botname}</appName>
+              <region>eastus</region>
               <appSettings>
                 <property>
                   <name>JAVA_OPTS</name>
@@ -147,8 +148,8 @@
               </appSettings>
               <runtime>
                 <os>linux</os>
-                <javaVersion>jre8</javaVersion>
-                <webContainer>jre8</webContainer>
+                <javaVersion>Java 11</javaVersion>
+                <webContainer>Java SE</webContainer>
               </runtime>
               <deployment>
                 <resources>
