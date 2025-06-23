@@ -41,7 +41,19 @@ public class Application extends BotDependencyConfiguration {
         System.out.println("MicrosoftAppTenantId: " + System.getenv("MicrosoftAppTenantId"));
         System.out.println("MicrosoftAppType: " + System.getenv("MicrosoftAppType"));
         System.out.println("AuthorityHostUrl: " + System.getenv("AuthorityHostUrl"));
+        System.out.println("ToChannelFromBotLoginUrl: " + System.getenv("ToChannelFromBotLoginUrl"));
+        System.out.println("ToChannelFromBotOAuthScope: " + System.getenv("ToChannelFromBotOAuthScope"));
 
+
+        System.setProperty("MicrosoftAppId", System.getenv("MicrosoftAppId"));
+        System.setProperty("MicrosoftAppPassword", System.getenv("MicrosoftAppPassword"));
+        System.setProperty("MicrosoftAppTenantId", System.getenv("MicrosoftAppTenantId"));
+        System.setProperty("MicrosotAppType", System.getenv("MicrosoftAppType"));
+        System.setProperty("AuthorityHostUrl", System.getenv("AuthorityHostUrl"));
+        System.setProperty("ToChannelFromBotLoginUrl", System.getenv("ToChannelFromBotLoginUrl"));
+        System.setProperty("ToChannelFromBotOAuthScope", System.getenv("ToChannelFromBotOAuthScope"));
+
+        // Let Spring handle property resolution
         SpringApplication.run(Application.class, args);
 
         System.out.println("Application started successfully!");
